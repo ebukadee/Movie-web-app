@@ -1,33 +1,20 @@
 import { useState } from "react";
 import Star from "./Star";
 
-const RatingStars = () => {
-  const [gradeIndex, setGradeIndex] = useState();
-  const GRADES = ["Poor", "Fair", "Good", "Very good", "Excellent"];
+const RatingStars = ({ value }) => {
+  const num = Math.ceil(value / 2);
+
+  const GRADES = ["1", "2", "3", "4", "5"];
   const activeStar = {
     fill: "yellow",
   };
 
-  const changeGradeIndex = (index) => {
-    setGradeIndex(index);
-  };
-
   return (
-    <div className="container">
-      <h1 className="result">
-        {GRADES[gradeIndex] ? GRADES[gradeIndex] : "You didn't review yet"}
-      </h1>
-      <div className="stars">
-        {GRADES.map((grade, index) => (
-          <Star
-            index={index}
-            key={grade}
-            changeGradeIndex={changeGradeIndex}
-            style={gradeIndex >= index ? activeStar : {}}
-          />
-        ))}
-      </div>
-    </div>
+    <span className="stars">
+      {GRADES.map((grade, index) => (
+        <Star index={index} key={grade} style={index < num ? activeStar : {}} />
+      ))}
+    </span>
   );
 };
 

@@ -25,39 +25,41 @@ body {
   align-items: center;
   margin: 30px auto;
 }
-.input-search {
-  padding: 5px 10px;
-  border: none;
-  font-size: 16px;
-  font-family: var(--font);
-  border-radius: 20px;
-}
+
 .movie-title {
   color: var(--light-color);
   font-family: var(--font);
   font-weight: lighter;
   padding-bottom: 20px;
 }
-.intro input {
-  caret-color: var(--light-color);
+.i-search {
   color: var(--light-color);
+  margin-right: 3px;
+  padding-top: 5px;
+}
+.input-search {
+  display: flex;
+  padding: 5px 10px;
   border: none;
   font-size: 16px;
-  padding: 3px 8px;
+  font-family: var(--font);
   border-radius: 20px;
   background-color: var(--dark-shadow);
+}
+
+.intro input {
+  caret-color: var(--light-color);
+  color: var(--light-shadow);
+  border: none;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background-color: transparent;
 }
 .intro input:focus {
   outline: none;
 }
 
-.input-button {
-  padding: 5px 20px;
-  outline: none;
-  margin-left: 10px;
-  border-radius: 20px;
-  border: none;
-}
 .category {
   font-family: var(--font);
   font-weight: lighter;
@@ -68,14 +70,19 @@ body {
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: 10px;
+  gap: 8px;
   justify-items: center;
 }
 .grid {
   background-color: var(--dark-color);
   width: 155px;
   height: auto;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
   border-radius: 3px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 .grid:hover {
   box-shadow: 0px 0px 40px var(--dark-shadow);
@@ -91,7 +98,6 @@ body {
 .grid h3 {
   text-align: center;
   font-size: 13px;
-  margin-top: 10px;
   color: var(--light-color);
   font-family: var(--font);
   font-weight: lighter;
@@ -104,11 +110,6 @@ body {
   text-align: center;
 }
 
-.container {
-  padding: 16px;
-  margin: 16px auto;
-}
-
 .result {
   text-align: center;
   margin-bottom: 16px;
@@ -116,9 +117,10 @@ body {
 }
 
 .stars {
+  position: relative;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
 }
 
 .star {
@@ -149,6 +151,9 @@ body {
   }
 }
 @media only screen and (max-width: 500px) {
+  .grid h3 {
+    font-size: 10px;
+  }
   .grid {
     width: 100%;
     height: auto;
@@ -158,7 +163,7 @@ body {
   }
   .movies-grid {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    padding-bottom: 70px;
     justify-items: center;
   }
 }

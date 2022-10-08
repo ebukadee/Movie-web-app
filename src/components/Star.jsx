@@ -1,8 +1,4 @@
 const Star = (props) => {
-  const changeGrade = (e) => {
-    props.changeGradeIndex(e.target.value);
-  };
-
   return (
     <label className="star">
       <input
@@ -11,14 +7,13 @@ const Star = (props) => {
         id={props.grade}
         value={props.index}
         className="stars_radio-input"
-        onClick={changeGrade}
       />
       <svg
-        width="58"
-        height="58"
+        width="12"
+        height="12"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#393939"
+        stroke="yellow"
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
